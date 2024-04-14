@@ -35,3 +35,15 @@ class Grade(models.Model):
 
     def __str__(self):
         return f'{self.student.first_name} ({self.module_name}({self.grade}))'
+    
+class Teacher(models.Model):
+    first_name = models.CharField(max_length=256)
+    last_name = models.CharField(max_length=256)
+    email = models.EmailField()
+    password = models.CharField(max_length=256)
+    faculty = models.ForeignKey(Major,on_delete=models.CASCADE,related_name='teacher')
+    is_teacher = models.BooleanField(default=True)
+    
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
