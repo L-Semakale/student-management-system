@@ -21,7 +21,7 @@ class StudentForm(forms.ModelForm):
         }
 
 class TeacherForm(forms.ModelForm):
-<<<<<<< HEAD
+
     class Meta:
         model = Teacher
         fields = ['first_name', 'last_name', 'email', 'password', 'faculty', 'is_teacher']
@@ -33,7 +33,7 @@ class TeacherForm(forms.ModelForm):
             'faculty': forms.TextInput(attrs={'class': 'form-control'}),
             'is_teacher': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
-=======
+
   class Meta:
     model = Teacher
     fields = ['first_name', 'last_name', 'email', 'password','faculty']
@@ -44,14 +44,4 @@ class TeacherForm(forms.ModelForm):
       'password':'Password',
       'faculty': 'Faculty',
       
-    }
-    widgets = {
-      'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-      'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-      'email': forms.EmailInput(attrs={'class': 'form-control'}),
-      'password': forms.PasswordInput(attrs={'class': 'form-control'}),
-      'faculty': forms.TextInput(attrs={'class': 'form-control'}),
-      
-    }
->>>>>>> 51cea71165cb3f2e9f95167d9240da7090c92535
-
+    }    
