@@ -27,14 +27,13 @@ class StudentForm(forms.ModelForm):
 class TeacherForm(forms.ModelForm):
   class Meta:
     model = Teacher
-    fields = ['first_name', 'last_name', 'email', 'password','faculty','is_teacher']
+    fields = ['first_name', 'last_name', 'email', 'password','faculty']
     labels = {
       'first_name': 'First Name',
       'last_name': 'Last Name',
       'email': 'Email',
       'password':'Password',
       'faculty': 'Faculty',
-      'is_teacher':'IsTeacher'
 
     }
     widgets = {
@@ -42,8 +41,8 @@ class TeacherForm(forms.ModelForm):
       'last_name': forms.TextInput(attrs={'class': 'form-control'}),
       'email': forms.EmailInput(attrs={'class': 'form-control'}),
       'password': forms.PasswordInput(attrs={'class': 'form-control'}),
-      'faculty': forms.CharField(attrs={'class': 'form-control'}),
-      'is_teacher':forms.BooleanField(attrs={'class': 'form-control'})
+      'faculty': forms.TextInput(attrs={'class': 'form-control'}),
+      
 
     }
 
