@@ -8,7 +8,7 @@ from django.contrib import messages
 from .models import Student,Grade,Module
 from .forms import StudentForm,TeacherForm
   
-# Create your views here.
+#@login_required('login')
 def index(request):
   current_user = str(request.user)
   if current_user.endswith('education.com') or request.user.is_superuser:
