@@ -10,7 +10,6 @@ from .forms import StudentForm,TeacherForm
   
 # Create your views here.
 def index(request):
-  print(request.user.is_superuser)
   current_user = str(request.user)
   if current_user.endswith('education.com') or request.user.is_superuser:
     context = {'students':Student.objects.all()}
@@ -113,6 +112,10 @@ def teacherForm(request):
       user.save();
       return redirect('index')
   return render(request,'teacher.html',context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('loginPage')
 
 
 
