@@ -84,8 +84,10 @@ def loginPage(request):
     if request.method == 'POST':
       username = request.POST['username']
       password = request.POST['password']
+    
       user = User.objects.get(username=username)
       user  = authenticate(request,username=username,password=password)
+    
       if user:
         login(request,user)
         return redirect('index')
